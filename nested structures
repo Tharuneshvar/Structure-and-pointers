@@ -1,0 +1,50 @@
+#include <stdio.h>
+struct friends 
+{
+    char name[50];
+    char pet_name[50];
+    int phone_no;
+};
+struct type 
+{
+    char typ[50];
+    char common_fr[50];
+    char placevisited[50];
+};
+int main() 
+{
+    int i;
+    printf("Enter the number of friends to add: ");
+    scanf("%d",&i);
+    struct friends frien[i];
+    struct type ty[i];
+    for (int j = 0;j < i;j++) 
+    {
+        printf("\nEnter details for Friend %d\n", j+1);
+        printf("Enter Friend name: ");
+        scanf("%s",&frien[j].name);
+        printf("Enter Pet name: ");
+        scanf("%s",&frien[j].pet_name);
+        printf("Enter phone number: ");
+        scanf("%d",&frien[j].phone_no);
+        printf("Enter the type of friend: ");
+        scanf("%s",&ty[j].typ);
+        printf("Enter the Name of common friends: ");
+        scanf("%s",&ty[j].common_fr);
+        printf("Enter the places visited together: ");
+        scanf("%s",&ty[j].placevisited);
+    }
+    printf("S.No  Name Pet Name Phone No. Type of Friend Common Friends Places Visited\n");
+    for (int k = 0;k < i;k++) 
+    {
+        printf("%d %s %s %d %s %s %s\n",
+        k + 1,
+        frien[k].name,
+        frien[k].pet_name,
+        frien[k].phone_no,
+        ty[k].typ,
+        ty[k].common_fr,
+        ty[k].placevisited);
+    }
+    return 0;
+}
